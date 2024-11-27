@@ -1,0 +1,48 @@
+
+	<!DOCTYPE html>
+	<html>
+	<head>
+	    <meta charset="utf-8">
+	    <title>我的网页</title>
+	    <style>
+	        body {
+	            margin: 0;
+	            padding: 0;
+	            background-image: url('img/home.jpg'); /* 替换为您的背景图片链接或路径 */
+	            background-size: cover; /* 使背景图片覆盖整个页面 */
+	            background-repeat: no-repeat; /* 防止背景图片重复 */
+	            font-family: Arial, sans-serif;
+	        }
+	 
+	        .button-container {
+	            position: fixed;
+	            bottom: 20px;
+	            left: 20px; /* 将位置改为左侧 */
+	            display: flex; /* 使用flex布局来横向排列按钮 */
+	        }
+	 
+	        .button-container a {
+	            display: block;
+	            /* margin-top: 10px; 移除上边距，因为现在是横向排列 */
+	            text-decoration: none;
+	            color: white;
+	            background-color: rgba(0, 0, 0, 0.5); /* 半透明黑色背景 */
+	            padding: 15px 30px; /* 增加内边距使按钮变大 */
+	            margin-right: 10px; /* 按钮之间的间距 */
+	            border-radius: 5px;
+	            transition: background-color 0.3s;
+	        }
+	 
+	        .button-container a:hover {
+	            background-color: rgba(0, 0, 0, 0.7); /* 鼠标悬停时加深背景色 */
+	        }
+	    </style>
+	</head>
+	<body>
+	    <div class="button-container">
+	        <a href="history.html">历史长河</a> <!-- 修改链接为实际页面 -->
+	        <a href="visit.html">濮院八景</a> <!-- 修改链接为实际页面 -->
+	        <a href="fashion.html">时尚濮院</a> <!-- 修改链接为实际页面 -->
+	    </div>
+	</body>
+	</html>

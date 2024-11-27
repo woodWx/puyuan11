@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+			html,body{
+				width:100%;
+				height:100%;
+				margin:0;
+				padding:0;
+			}
+			.flex-container{
+				width: 100%;
+				height: 100%;
+				min-width: 500px;
+				z-index: -10;
+				zoom: 1;				
+				background-image: url("img/background3.jpg");
+				background-repeat:no-repeat;
+				background-size:cover;
+				background-position: center 0;
+				display: -webkit-flex;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-around;
+			}
+			.flex-item {
+			    background-color: cornflowerblue;
+				opacity: 80%;
+			    width: 300px;
+			    height: 150px;
+			    margin: 10px;
+				font-size: 45px;
+				text-align: center;
+				line-height: 150px;
+				border-radius: 30px;
+			}
+			.back{
+				width:200px;
+				height:50px;
+				position: relative;
+				bottom: 0%;
+				right: -87.5%;
+				font-size: 40px;
+			}
+			
+			/* 超链接样式设置 */
+			a{
+			    font-family: Arial, sans-serif; /* 修改字体 */
+			    color: dimgray; /* 未访问链接的颜色 */
+			    text-decoration: none; /* 移除下划线 */
+			}			 
+			a:visited{
+			    color: royalblue; /* 已访问链接的颜色 */
+			}			 
+			a:hover{
+			    color: mediumpurple; /* 鼠标悬停时的颜色 */
+			    text-decoration: underline; /* 鼠标悬停时添加下划线 */
+			}			 
+			a:active{
+			    color: seagreen; /* 激活（点击）时的颜色 */
+			}
+			
+			/* 提示框样式 */
+			.tooltip {
+			    display: none; /* 默认隐藏 */
+		        position: absolute;
+	            top: 0; /* 放置在链接的右方 */
+	            left: 100%;	            
+	            color: #fff;
+	            white-space: nowrap; /* 防止文本换行 */
+	            z-index: 10; /* 确保提示框在链接上方 */
+				margin-left: 10px;
+	        }
+			
+		</style>
+		<link rel="stylesheet" href="css/main.css" type="text/css">
+	</head>
+
+	<body>
+		<div class="flex-container">
+		<div class="flex-item" style="position: relative;">
+		    <a href="#" onmouseover="showTooltip(this, 'img/shizhuangzhouhaibao.jpg')" onmouseout="hideTooltip()">织绘未来</a>
+		    <div class="tooltip" id="zhihuiweilai"></div>
+		</div>
+		<div class="flex-item" style="position: relative;">
+		    <a href="#" onmouseover="showTooltip(this, 'img/dianjingzhouhaibao.jpg')" onmouseout="hideTooltip()">濮院电竞周</a>
+		    <div class="tooltip" id="dianjingzhou"></div>
+		</div>
+		<div class="flex-item" style="position: relative;">
+		    <a href="#" onmouseover="showTooltip(this, 'img/GQhaibao.jpeg')" onmouseout="hideTooltip()">GQ盛宴</a>
+		    <div class="tooltip" id="gq"></div>
+		</div>		
+		<div class="back">
+			<a href="home.html">返回首页</a>
+		</div>
+		
+		<script type="text/javascript">
+			function showTooltip(link, imgSrc) {
+			    var tooltip = link.nextElementSibling; // 获取链接的下一个兄弟元素（即提示框）
+			    tooltip.innerHTML = '<img src="' + imgSrc + '" alt="Tooltip Image" style="max-width: 250px; height: auto;">';
+			    tooltip.style.display = 'block'; // 显示提示框
+			}
+			 
+			function hideTooltip() {
+			    var tooltips = document.querySelectorAll('.tooltip'); // 获取所有提示框
+			    tooltips.forEach(function (tooltip) {
+			    tooltip.style.display = 'none'; // 隐藏所有提示框
+			    });
+			}		
+		</script>
+		
+	</body>
+</html>

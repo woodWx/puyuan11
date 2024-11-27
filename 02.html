@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>南宋嘉定十七年</title>
+    <meta charset="utf-8" />
+    <style type="text/css">
+		.dv1{
+			background-color: azure;
+			color: black;
+			font-size: 30px;
+			line-height:50px;
+			width: 900px;
+			border:5px solid skyblue;
+			text-align: center;
+			margin:100px auto 0px auto;
+		}
+      /* 公用样式 */
+      html,body{
+	    width:100%;
+      	height:100%;
+      	margin:0px;
+      	overflow:hidden;
+		background-image: url("img/页面02背景图.png");
+      }
+      /* 图片列表 */
+      .image_list{
+	    text-align:center;
+      	margin-top:10%;
+      }
+      .image_list img{
+	    width:300px;
+      	opacity:0.7;
+      }
+      .image_list img:hover{
+      	opacity:1;
+      }
+      /* 大背景 */
+      #bg{
+      	position:absolute;
+      	top:0px;
+      	left:0px;
+      	
+      	background-color:white;
+	    width:100%;
+      	height:100%;
+      	
+      	background-repeat:no-repeat;
+      	background-position:center;
+      	background-size:80% auto;
+      	
+      	display:none;
+      }
+      /* 关闭按扭 */
+      .close_btn{
+	    position:absolute;
+      	top:30px;
+      	right:30px;
+      	cursor:pointer;
+      		display:none;
+      }
+    </style>
+    <script type="text/javascript">
+      //显示大图
+      function showImage(id){
+    	  //id选择器
+    	  document.getElementById("bg").style.backgroundImage = "url('img/"+id+".jpg')";
+    	  document.getElementById("bg").style.display = "block";
+    	  //class选择器
+    	  document.getElementsByClassName("close_btn")[0].style.display = "block";
+      }
+      //隐藏大图
+      function closeImage(){
+    	  //id选择器
+    	  document.getElementById("bg").style.display = "none";
+    	  //class选择器
+    	  document.getElementsByClassName("close_btn")[0].style.display = "none";
+      }
+    </script>
+  </head>
+  <body>
+	  <div class="dv1" style="font-family:楷体; text-decoration:none;">南宋嘉定十七年（1224年），濮氏家族第六代子孙濮斗南因拥立宋理宗有功，其宅院被下诏赐名为“濮院“，小镇因此得名。</div>
+    
+    <!-- 图片列表 -->
+	<div class="image_list">
+	      <img src="img/1.jpg" title="点击查看大图" onclick="showImage(1)" />
+	      <img src="img/2.jpg" title="点击查看大图" onclick="showImage(2)" /><br/>
+	      <img src="img/3.jpg" title="点击查看大图" onclick="showImage(3)" />
+	      <img src="img/4.jpg" title="点击查看大图" onclick="showImage(4)" />
+	    </div>
+	    
+	    <!-- 黑色大背景 -->
+	    <div id="bg"></div>
+	    <!-- 关闭按扭 -->
+	    <img class="close_btn" src="img/button.jpg" title="关闭" onclick="closeImage()" />
+	    
+	  </body>
+	</html>
